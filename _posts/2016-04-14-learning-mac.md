@@ -14,6 +14,6 @@ so far:
 
 Fixing locale when doing SSH:
 
-{% highlight bash %}
+``` bash
 sudo vim /etc/ssh/ssh_config # Comment out SendEnv LANG LC_
-{% endhighlight %}
+```

@@ -16,3 +16,7 @@ github_username:  tlbdk
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

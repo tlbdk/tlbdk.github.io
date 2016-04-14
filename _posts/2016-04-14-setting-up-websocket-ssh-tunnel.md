@@ -8,12 +8,14 @@ categories: websocket ssh tunnel
 # Setting up the server
 
 Install wstunnel:
-{% highlight bash %}
+
+``` bash
 sudo npm -g install wstunnel
-{% endhighlight %}
+```
 
 Create systemd unit file /etc/systemd/system/wstunnel.service:
-{% highlight systemd %}
+
+``` ini
 [Service]
 ExecStart=/usr/bin/wstunnel -s 8080
 Restart=always
@@ -25,23 +27,25 @@ Group=nogroup
 
 [Install]
 WantedBy=multi-user.target
-{% endhighlight %}
+```
 
 Register and start wstunnel:
-{% highlight bash %}
+
+```
 systemctl enable wstunnel
 systemctl start wstunnel
-{% endhighlight %}
+```
 
 Setup nginx to forward traffic to wstunnel add file /etc/nginx/sites-available/ssh.example.com:
-{% highlight nginx %}
+
+``` nginx
 server {
   listen 80;
   server_name ssh.example.com;
 
   location /socket {
     auth_basic           "closed site";
-     auth_basic_user_file /opt/ssh.example.com.htpasswd;
+    auth_basic_user_file /opt/ssh.example.com.htpasswd;
 
     proxy_redirect     off;
     proxy_http_version 1.1;
@@ -93,38 +97,45 @@ server {
     proxy_pass http://127.0.0.1:8080;
   }
 }
-{% endhighlight %}
+```
 
 Create user for basic authentication:
-{% highlight bash %}
+
+``` bash
 echo -n "user:"" > /opt/ssh.example.com.htpasswd
 mkpasswd -m sha-512 >> /opt/ssh.example.com.htpasswd
-{% endhighlight %}
+```
 
-{% highlight bash %}
+Activate the site:
+
+``` bash
 ln -s /etc/nginx/sites-available/ssh.example.com /etc/nginx/sites-enabled/ssh.example.com
-{% endhighlight %}
+```
 
 Restart nginx:
-{% highlight bash %}
+
+``` bash
 systemctl restart nginx
-{% endhighlight %}
+```
 
 # Setting up the tunnel on the client
 
 Listen on local port 2222 and forward traffic to server side localhost port 22 connecting over http:
-{% highlight bash %}
+
+``` bash
 wstunnel -t 2222:localhost:22 ws://user:password@ssh.example.com/socket
-{% endhighlight %}
+```
 
 Listen on local port 2222 and forward traffic to server side localhost port 22 connecting over https:
-{% highlight bash %}
+
+``` bash
 wstunnel -t 2222:localhost:22 wss://user:password@ssh.example.com/socket
-{% endhighlight %}
+```
 
 Same as above, but with http proxy:
-{% highlight bash %}
+
+``` bash
 wstunnel -t 2222:localhost:22 -p http://user:password@proxy.example.com:8080 wss://user:password@ssh.example.com/socket
-{% endhighlight %}
+```
 
 Read more about wstunnel [here](https://www.npmjs.com/package/wstunnel)

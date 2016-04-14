@@ -1,0 +1,13 @@
+# README
+
+## Installation
+
+``` bash
+gem install jekyll rouge
+```
+
+## Run site
+
+``` bash
+jekyll serve
+```
