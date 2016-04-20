@@ -12,11 +12,13 @@ Download and install:
 https://github.com/bitly/oauth2_proxy
 
 Testing:
+
 ``` bash
 oauth2_proxy -client-id="<Client id>" -client-secret="<Client Secret>" -provider="github" -cookie-secret="<random string>" -ail-domain="*" -upstream file:///dev/null
 ```
 
 Nginx config file:
+
 ``` nginx
 location = /oauth2/auth {
     internal;
@@ -50,6 +52,7 @@ location / {
 ```
 
 /etc/oauth2_proxy.cfg:
+
 ```
 client_id = "<Client id>"
 client_secret = "<Client Secret>"
@@ -64,6 +67,7 @@ upstreams = [
 ```
 
 /etc/systemd/system/oauth2_proxy.service:
+
 ```
 # Systemd service file for oauth2_proxy daemon
 #
