@@ -53,7 +53,7 @@ location / {
 
 /etc/oauth2_proxy.cfg:
 
-```
+``` ini
 client_id = "<Client id>"
 client_secret = "<Client Secret>"
 provider = "github"
@@ -68,7 +68,7 @@ upstreams = [
 
 /etc/systemd/system/oauth2_proxy.service:
 
-```
+``` ini
 # Systemd service file for oauth2_proxy daemon
 #
 
