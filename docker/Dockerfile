@@ -2,6 +2,8 @@
 FROM ubuntu:16.04
 MAINTAINER tlb@rapanden.dk
 
+ENV TERM linux
+
 # Install Nginx.
 RUN \
   apt-get update && \
