@@ -12,13 +12,14 @@ RUN \
   apt-get install -y nginx wget supervisor openssh-client git expect ruby ruby-dev build-essential && \
   echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
   chown -R www-data:www-data /var/lib/nginx
+
 RUN \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
   	ln -sf /dev/stderr /var/log/nginx/error.log
 
 RUN gem install jekyll
 
-# Do cleanup
+# Do cleanup, TODO: https://www.dajobe.org/blog/2015/04/18/making-debian-docker-images-smaller/
 #RUN \
 #  rm -rf /var/lib/apt/lists/*
 # TODO: Remove all the build dependencies to reduce image size
