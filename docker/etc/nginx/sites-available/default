@@ -11,7 +11,6 @@ server {
   location / {
     auth_request /oauth2/auth;
     error_page 401 = /oauth2/start?rd=$uri;
-    error_page 403 = /oauth2/start?rd=$uri;
     try_files $uri $uri/ =404;
   }
 
