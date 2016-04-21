@@ -15,10 +15,11 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
   	&& ln -sf /dev/stderr /var/log/nginx/error.log
 
 # Install oauth2_proxy
-RUN \
-  wget -O - https://github.com/bitly/oauth2_proxy/releases/download/v2.0.1/oauth2_proxy-2.0.1.linux-amd64.go1.4.2.tar.gz | tar -xz && \
-  mv oauth2_proxy-2.0.1.linux-amd64.go1.4.2/oauth2_proxy /usr/local/bin && \
-  chown root:root /usr/local/bin/oauth2_proxy
+# Using self built version as current version does not seem to support auth_request with nginx
+#RUN \
+#  wget -O - https://github.com/bitly/oauth2_proxy/releases/download/v2.0.1/oauth2_proxy-2.0.1.linux-amd64.go1.4.2.tar.gz | tar -xz && \
+#  mv oauth2_proxy-2.0.1.linux-amd64.go1.4.2/oauth2_proxy /usr/local/bin && \
+#  chown root:root /usr/local/bin/oauth2_proxy
 
 # Copy in configuration
 COPY etc /etc
