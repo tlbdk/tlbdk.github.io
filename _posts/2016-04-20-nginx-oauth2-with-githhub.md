@@ -64,6 +64,7 @@ email_domains = [
 upstreams = [
         "file:///dev/null"
 ]
+github_org = "nversion"
 ```
 
 /etc/systemd/system/oauth2_proxy.service:
