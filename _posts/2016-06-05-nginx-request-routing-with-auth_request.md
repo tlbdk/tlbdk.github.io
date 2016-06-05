@@ -7,7 +7,8 @@ categories: nginx routing auth_request
 
 I have recently been thinking a bit about how to do pilot testing of new
 functionallity in prodution without having downtime. Fx. by marking users in a
-JWT token and then sending them to a pilot pool of servers.
+JWT token and then sending them to a pilot pool of servers based on that marking
+when the request hits the load balancer.
 
 The test server and nginx configuraion below does this by using the auth_request
 option to send the decision to an external server. Right now it just does
@@ -21,7 +22,7 @@ var count = 1;
 
 const auth_server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('X-Pilot', (count++ % 2 > 0) ?  'A' : 'B');
+  res.setHeader('X-Pilot', (count++ % 2 > 0) ?  'A' : 'B'); // Do round-robin
   res.end();
 });
 
