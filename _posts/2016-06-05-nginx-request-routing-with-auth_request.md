@@ -51,7 +51,7 @@ server2.listen(3002, "localhost", () => {
 ```
 
 ``` nginx
-upstram auth_upstream {
+upstream auth_upstream {
   server 127.0.0.1:3000;
 }
 
