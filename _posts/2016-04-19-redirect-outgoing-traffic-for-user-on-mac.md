@@ -22,15 +22,29 @@ note that this will overwrite any firewall rules you already have loaded.
 
 ``` bash
 # Second redirect now incoming traffic to localhost 8080 for all traffic that matches our host and port filter
-rdr on lo0 proto tcp from en0 to 40.68.213.123 port { 80, 443 } -> 127.0.0.1 port 8080
+rdr on lo0 proto tcp from en0 to <IP to redirect to proxy> port { 80, 443 } -> 127.0.0.1 port 8080
 # First route all outgoing traffic from en0 to lo0 that matches our host and port filter and user
-pass out on en0 route-to lo0 proto tcp from en0 to 40.68.213.123 port { 80, 443 } keep state user { tlb }
+pass out on en0 route-to lo0 proto tcp from en0 to <IP to redirect to proxy> port { 80, 443 } keep state user { <user id you are running your browser under> }
+```
+
+Allow nobody to run "/sbin/pfctl -s state" as this is used by the mitmproxy:
+
+/etc/sudoers:
+
+``` bash
+nobody ALL=(root) NOPASSWD: /sbin/pfctl -s state
+```
+
+Run mitmweb once as your own user to create ssl certificates in ".mitmproxy":
+
+```bash
+mitmweb
 ```
 
 Start web interface for the proxy under user nobody:
 
 ``` bash
-sudo mitmweb -T --host
+sudo -u nobody mitmweb -T --host
 ```
 
 Go to <http://localhost:8081/> where the web interface is running:
