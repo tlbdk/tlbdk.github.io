@@ -2,10 +2,10 @@
 layout: post
 title:  "Intercept outgoing traffic and send it to local proxy on mac"
 date:   2016-04-14 15:11:00 +0200
-categories: mac proxy mitmproxy
+categories: mac proxy mitmproxy fiddler
 ---
 
-I was missing "fiddler" like intercept traffic on OS X, but luckily you can do
+I was missing "fiddler" like traffic interception on OS X, but luckily you can do
 something similar with the pf firewall, it's similar to iptables on
 linux and allows for doing transparent proxying, but we a few limits. PF can
 only do matching on users and groups and not pids like iptables, so the proxy

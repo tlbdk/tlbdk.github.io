@@ -6,13 +6,13 @@ categories: nginx routing auth_request
 ---
 
 I have recently been thinking a bit about how to do pilot testing of new
-functionallity in prodution without having downtime. Fx. by marking users in a
+functionality in production without having downtime. Fx. by marking users in a
 JWT token and then sending them to a pilot pool of servers based on that marking
 when the request hits the load balancer.
 
-The test server and nginx configuraion below does this by using the auth_request
+The test server and nginx configuration below does this by using the auth_request
 option to send the decision to an external server. Right now it just does
-round-robin, but the nodejs server could easly do the decision based on the
+round-robin, but the nodejs server could easily do the decision based on the
 content of a JWT token or looking up in an external database.
 
 ```javascript
