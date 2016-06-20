@@ -17,7 +17,7 @@ First install "man in the middle proxy" to handle the local proxying:
 brew install mitmproxy
 ```
 
-Create pf.conf file and enable and load the firewall with "pfctl -evf pf.conf",
+Create pf.conf file and enable and load the firewall with "sudo pfctl -evf pf.conf",
 note that this will overwrite any firewall rules you already have loaded.
 
 ``` bash
