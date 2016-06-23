@@ -47,4 +47,30 @@ Start web interface for the proxy under user nobody:
 sudo -u nobody mitmweb -T --host
 ```
 
-Go to <http://localhost:8081/> where the web interface is running:
+Go to <http://localhost:8081/> where the web interface is running.
+
+Example on how to overwrite the request path and also overview the response:
+
+``` bash
+sudo -u nobody mitmdump -T --host -s rewrite.py
+```
+
+rewrite.py:s
+
+``` python
+from libmproxy.models import HTTPResponse
+from netlib.http import Headers
+
+def request(context, flow):
+    flow.request.oldpath = flow.request.path;
+    if flow.request.path.endswith("/newpage.html"):
+        flow.request.path = "/oldpath.html"
+
+def response(context, flow):
+    if flow.request.oldpath.endswith("/oldpage.html"):
+        text_file = open("/tmp/netpage.html", "r")
+        html = text_file.read()
+        flow.response.reason = "OK";
+        flow.response.status_code = 200;
+        flow.response.content = html
+```
