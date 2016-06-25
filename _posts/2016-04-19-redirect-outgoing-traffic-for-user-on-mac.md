@@ -58,7 +58,7 @@ sudo -u nobody mitmdump -T --host -s rewrite.py
 rewrite.py:s
 
 ``` python
-from libmproxy.models import HTTPResponse
+from mitmproxy.models import HTTPResponse
 from netlib.http import Headers
 
 def request(context, flow):
@@ -67,7 +67,7 @@ def request(context, flow):
         flow.request.path = "/oldpath.html"
 
 def response(context, flow):
-    if flow.request.oldpath.endswith("/oldpage.html"):
+    if flow.request.oldpath.endswith("/newpage.html"):
         text_file = open("/tmp/netpage.html", "r")
         html = text_file.read()
         flow.response.reason = "OK";
