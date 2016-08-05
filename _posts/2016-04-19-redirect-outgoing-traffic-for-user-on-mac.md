@@ -63,14 +63,13 @@ from netlib.http import Headers
 
 def request(context, flow):
     flow.request.oldpath = flow.request.path;
-    if flow.request.path.endswith("/newpage.html"):
-        flow.request.path = "/oldpath.html"
+    if flow.request.path.endswith("/fakepage.html"):
+        flow.request.path = "/existingpage.html"
 
 def response(context, flow):
-    if flow.request.oldpath.endswith("/newpage.html"):
-        text_file = open("/tmp/netpage.html", "r")
-        html = text_file.read()
+    if flow.request.oldpath.endswith("/fakepage.html"):
+        text_file = open("/tmp/fakepage.html", "r")
         flow.response.reason = "OK";
         flow.response.status_code = 200;
-        flow.response.content = html
+        flow.response.content = text_file.read()
 ```
