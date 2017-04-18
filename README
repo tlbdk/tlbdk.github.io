@@ -1,13 +1,26 @@
 # README
 
-## Installation
+# Installation
 
-``` bash
-gem install jekyll rouge
+## Windows
+```
+choco install ruby -y # Restart the command prompt to get ruby and gem in path
+gem install jekyll
 ```
 
-## Run site
+## MacOSX
+```
+brew install ruby
+gem install jekyll
+```
 
-``` bash
+## Ubuntu
+```
+apt-get install ruby ruby-dev build-essential
+gem install jekyll
+```
+
+# Preview site changes
+```
 jekyll serve
 ```
