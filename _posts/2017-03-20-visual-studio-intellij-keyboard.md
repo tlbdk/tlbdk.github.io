@@ -7,9 +7,13 @@ categories: VisualStudio IntelliJ
 
 # Keybindings
 
-* View.QuickActions : Alt-Enter
-* View.QuickActionsForPosition : Alt-Enter
-* Edit.GoToImplementation : Ctrl-U, Ctrl-Alt-B
-* Edit.GoToDefinition : Ctrl-B
-* View.NavigateForward : Ctrl-Alt-Right Arrow
-* View.NavigateBackwards : Ctrl-Alt-Left Arrow
+* View.QuickActions : (Global) Alt-Enter
+* View.QuickActionsForPosition : (Global) Alt-Enter
+* Edit.GoToImplementation : (Global) Ctrl-U, Ctrl-Alt-B
+* Edit.GoToDefinition : (Global) Ctrl-B
+* View.NavigateForward : (Global) Ctrl-Alt-Right Arrow
+* View.NavigateBackwards : (Global) Ctrl-Alt-Left Arrow
+* Refactor.Rename : (Global) F2
+* File.Rename : (Solution Explorer) F2
+* Edit.GoToSymbol : (Global) Ctrl-N
+* Edit.ParameterInfo : (Global) Ctrl-P
