@@ -23,8 +23,8 @@ Management job is to set the culture:
 ## Things to strive for
 
 * Small teams
-    * Managements job is to help execute on decisions not make them
 * Responsibility and decision-making competence should be in the bottom of the organization hierarchy
+    * Managements job is to help execute on decisions not make them
 * Technical skilled people that can cover more roles and take responsibility are the types you want to hire
     * Rather get one person for twice the money than to for half that neither can or will take responsibility
 * Fixers/project secretary instead of "manager/coach/etc"
