@@ -16,8 +16,8 @@ Management job is to set the culture:
     * Could this meeting have been a email instead?
 * Ensure nobody holds back innovation or gets stuck either in ways of working or in a technology stack
 * Ensure people are always learning and feel challenged
-* Fire people who actively work against the culture
-* Fire people who won't and can't take responsibility
+* Ensure people are qualified and that proper vetting or skillet has been done before hiring
+* Fire people who actively work against the culture, can't take responsibility or are not qualified to do their job
 * Resist stupid decisions from their management, fx. outsourcing, corporate standardization on bad tools, etc.
 
 ## Things to strive for
