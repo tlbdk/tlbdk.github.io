@@ -3,6 +3,7 @@ layout: post
 title:  "Private github pages hosted in Docker"
 date:   2016-04-14 15:11:00 +0200
 categories: nginx oauth2 auth_request jekyll
+permalink: /nginx/oauth2/auth_request/jekyll/2016/04/14/jekyll-nginx-oauth-github-docker.html
 ---
 
 A couple of days ago I [posted]({% post_url 2016-04-20-nginx-oauth2-with-githhub %})

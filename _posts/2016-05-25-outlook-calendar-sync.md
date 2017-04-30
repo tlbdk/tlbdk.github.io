@@ -3,6 +3,7 @@ layout: post
 title:  "Sync your outlook calender to a gmail og google apps account"
 date:   2016-04-14 15:11:00 +0200
 categories: outlook sync gmail googleapps
+permalink: /outlook/sync/gmail/googleapps/2016/04/14/outlook-calendar-sync.html
 ---
 
 Download and install [Outlook Google Calendar Sync](https://outlookgooglecalendarsync.codeplex.com)

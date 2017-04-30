@@ -3,6 +3,7 @@ layout: post
 title:  "Learning to use the Mac and what to fix"
 date:   2016-04-14 15:11:00 +0200
 categories: mac
+permalink: /mac/2016/04/14/learning-mac.html
 ---
 
 I recently got my first mac and have been getting used to it, as an Linux and

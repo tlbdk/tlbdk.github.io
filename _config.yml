@@ -14,6 +14,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://tlbdk.github.com"
 github_username:  tlbdk
 
+# Url settings
+permalink: /:year/:month/:day/:title.html
+
 # Build settings
 markdown: kramdown
 

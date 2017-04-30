@@ -3,6 +3,7 @@ layout: post
 title:  "Intercept outgoing traffic and send it to local proxy on mac"
 date:   2016-04-14 15:11:00 +0200
 categories: mac proxy mitmproxy fiddler
+permalink: /mac/proxy/mitmproxy/fiddler/2016/04/14/redirect-outgoing-traffic-for-user-on-mac.html
 ---
 
 I was missing "fiddler" like traffic interception on OS X, but luckily you can do

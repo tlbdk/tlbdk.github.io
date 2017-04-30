@@ -3,6 +3,7 @@ layout: post
 title:  "Consul templates"
 date:   2016-04-14 15:11:00 +0200
 categories: consul templates
+permalink: /consul/templates/2016/04/14/consul-templates.html
 ---
 
 Running consul:

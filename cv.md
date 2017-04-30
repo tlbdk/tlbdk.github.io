@@ -5,7 +5,6 @@ menu_title: CV
 permalink: /cv/
 ---
 
-{{:cv:tlb-corp.jpg?nolink |}}
 Troels is a first-class technical specialist with a deep understanding and strong foundation in a broad number of technologies and disciplines with years of experience. He has a business degree and experience as founding partner of a successful IT Consultancy giving him a keen understanding of the business side that very few with his technical background have.
 
 Troels's unique background means he can work from conceptual to practical level in many different roles and gives him a unique ability to execute and get things done even in the most challenging of environments. He takes pride in delivering high quality work on time with a focus on innovative and best-of-breed solution no matter technology.

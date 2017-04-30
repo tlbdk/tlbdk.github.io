@@ -3,6 +3,7 @@ layout: post
 title:  "Nginx request routing with auth_request"
 date:   2016-04-14 15:11:00 +0200
 categories: nginx routing auth_request
+permalink: /nginx/routing/auth_request/2016/04/14/nginx-request-routing-with-auth_request.html
 ---
 
 I have recently been thinking a bit about how to do pilot testing of new

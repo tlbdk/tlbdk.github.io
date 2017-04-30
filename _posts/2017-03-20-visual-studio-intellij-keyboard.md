@@ -3,6 +3,7 @@ layout: post
 title:  "InteliJ keybindings for Visual Studio"
 date:   2016-07-21 10:39:00 +0200
 categories: VisualStudio IntelliJ
+permalink: /visualstudio/intellij/2016/07/21/visual-studio-intellij-keyboard.html
 ---
 
 # Keybindings

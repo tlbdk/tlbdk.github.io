@@ -3,6 +3,7 @@ layout: post
 title:  "Setting up a websocket SSH tunnel"
 date:   2016-04-14 15:11:00 +0200
 categories: websocket ssh tunnel
+permalink: /websocket/ssh/tunnel/2016/04/14/setting-up-websocket-ssh-tunnel.html
 ---
 
 # Setting up the server

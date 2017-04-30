@@ -3,6 +3,7 @@ layout: post
 title:  "Nginx OAuth2 proxy with Github and auth_request"
 date:   2016-04-14 15:11:00 +0200
 categories: nginx oauth2 auth_request
+permalink: /nginx/oauth2/auth_request/2016/04/14/nginx-oauth2-with-githhub.html
 ---
 
 1. Create a new project: https://github.com/settings/developers

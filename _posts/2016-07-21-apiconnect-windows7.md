@@ -3,6 +3,7 @@ layout: post
 title:  "API Connect install on Windows 7"
 date:   2016-07-21 10:39:00 +0200
 categories: Docker
+permalink: /docker/2016/07/21/apiconnect-windows7.html
 ---
 
 1. Install newest node:
