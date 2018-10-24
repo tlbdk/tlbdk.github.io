@@ -3,7 +3,7 @@ layout: post
 title:  "encrypted swap on Ubuntu 18.10"
 date:   2018-10-22 19:30:00 +0200
 categories: FSCrypt
-permalink: /ubuntu/2018/10/22/fscrypt.html
+permalink: /ubuntu/2018/10/22/encrypted-swap.html
 ---
 
 Install cryptsetup utils:
