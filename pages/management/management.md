@@ -26,7 +26,7 @@ Management job is to set the culture:
 * Responsibility and decision-making competence should be in the bottom of the organization hierarchy
     * Managements job is to help execute on decisions not make them
 * Technical skilled people that can cover more roles and take responsibility are the types you want to hire
-    * Rather get one person for twice the money than to for half that neither can or will take responsibility
+    * Rather get one person for twice the money than two for half, that neither can or will take responsibility
 * Fixers/project secretary instead of "manager/coach/etc"
     * Not all tasks in a team are technical and especially in big organization the team might have jobs where having someone with a "pushy" personality that don't take no for an answer would be a better fitter than a highly skilled technical introvert. 
 
@@ -35,9 +35,9 @@ Management job is to set the culture:
 * Management and formal structure 
     * Works against the people who do the work taking responsibility and having decision-making competence
 * More people as it requires more formal structure
-* Focus on process and people who focus on process
+* Focus on process and people who only focus on process
 * Project/SCRUM/Agile/"insert your process framework here" Manager, Masters, Leaders, Coaches as a full time job
-* The team might opt to use a project management framework, but if they are spending more than 5-10% or their time/budget on process management something is wrong, this means this role can never be a full time 
+* The team might opt to use a project management framework, but if they are spending more than 5-10% of their time/budget on process management something is wrong, this means this type of role can never be a full time 
 * Bonuses and promotions
     * Makes people focus on formal structure instead of creating value
 * People who only work with formal structure (process people, managers, etc.)

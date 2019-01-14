@@ -18,3 +18,9 @@ Fixing locale when doing SSH:
 ``` bash
 sudo vim /etc/ssh/ssh_config # Comment out SendEnv LANG LC_
 ```
+
+Installing bash completion:
+
+``` bash
+brew install bash-completion
+```

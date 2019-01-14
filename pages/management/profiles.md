@@ -94,3 +94,15 @@ Pluses:
 * Spare time development projects
 * Github or similar account with sample code
 * Open Source development experience
+
+## Backend
+
+TODO: ...
+
+## Fullstack
+
+TODO: ...
+
+## Andorid / IOS
+
+ReactNative
