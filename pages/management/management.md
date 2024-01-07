@@ -16,9 +16,9 @@ Management job is to set the culture:
     * Could this meeting have been a email instead?
 * Ensure nobody holds back innovation or gets stuck either in ways of working or in a technology stack
 * Ensure people are always learning and feel challenged
-* Ensure people are qualified and that proper vetting or skillet has been done before hiring
+* Ensure people are qualified and that proper vetting has been done before hiring
 * Fire people who actively work against the culture, can't take responsibility or are not qualified to do their job
-* Resist stupid decisions from their management, fx. outsourcing, corporate standardization on bad tools, etc.
+* Resist stupid decisions from their management, fx. outsourcing, corporate standardization on bad tools, estimates that nobody uses etc.
 
 ## Things to strive for
 
@@ -32,12 +32,12 @@ Management job is to set the culture:
 
 ## Things to avoid
 
-* Management and formal structure 
+* Management and formal structure
     * Works against the people who do the work taking responsibility and having decision-making competence
 * More people as it requires more formal structure
 * Focus on process and people who only focus on process
 * Project/SCRUM/Agile/"insert your process framework here" Manager, Masters, Leaders, Coaches as a full time job
-* The team might opt to use a project management framework, but if they are spending more than 5-10% of their time/budget on process management something is wrong, this means this type of role can never be a full time 
+* The team might opt to use a project management framework, but if they are spending more than 5-10% of their time/budget on process management something is wrong, this means this type of role can never be a full time
 * Bonuses and promotions
     * Makes people focus on formal structure instead of creating value
 * People who only work with formal structure (process people, managers, etc.)
