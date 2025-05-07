@@ -1,8 +1,7 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
+  # Trigger the workflow every time you push to the `master` branch
   push:
     branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
@@ -20,12 +19,12 @@ jobs:
       - name: Build site with docker
         run: |
           docker build --progress=plain --no-cache --output type=tar,dest=${{ runner.temp }}/artifact.tar .
-      - name: Upload artifact
+      - name: Upload Github Pages artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: ${{ runner.temp }}/artifact.tar
-          retention-days: ${{ inputs.retention-days }}
+          retention-days: 1
           if-no-files-found: error
   deploy:
     needs: build
