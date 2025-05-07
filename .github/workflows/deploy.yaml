@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Fetch all history for all branches and tags
-      - name: Build the with docker
+      - name: Build site with docker
         run: |
           docker build --progress=plain --no-cache --output type=tar,dest=${{ runner.temp }}/artifact.tar
       - name: Upload artifact
