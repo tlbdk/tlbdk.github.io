@@ -1,10 +1,7 @@
 # README
 
-## Installation
+## Install
 
-https://jekyllrb.com/docs/installation/
-
-
-## Usage
-
-https://jekyllrb.com/docs/
+``` bash
+npm install
+```

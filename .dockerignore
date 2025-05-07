@@ -1,0 +1,5 @@
+Dockerfile
+.astro
+.github
+.vscode
+node_modules
