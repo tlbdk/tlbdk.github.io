@@ -4,7 +4,7 @@ description: ""
 pubDate:   2024-12-19 11:27:00 +0100
 categories: Docker
 slug: docker/2024/12/19/multistage-build.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: "/docker.svg"
 ---
 
 This gives some examples on how to use docker multistage builds with a NodeJS bases image.

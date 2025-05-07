@@ -4,7 +4,7 @@ description: ""
 pubDate:   2024-12-19 10:11:00 +0100
 categories: Kubernetes
 slug: kubernetes/2024/12/19/into.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: "/kubernetes.svg"
 ---
 
 This gives a some quick examples of a service running in 3 copies exposed on http and https behind a load balancer, with a setup that allow zero downtime deployments and a multi environment deployments with environment specifics in separate files
