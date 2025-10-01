@@ -4,7 +4,7 @@ description: "What are the options for using a host USB in a VM on MacOS on ARM"
 pubDate:   2025-06-27 08:53:00 +0200
 categories: MacOS VM, USB Passthrough, VSCode Server, Remote SSH
 slug: astro/2025-06-27-macos-vm-usb-passthrough.html
-heroImage: "/google-workspace-api.svg"
+heroImage: "/parallels-linux-vscode.svg"
 ---
 
 I'm currently working on a project that requires me to use a USB FD-CAN adapter that is supported on MacOS but not fully, MacOS supports HS CAN but not CAN FD, the CAN adapter works perfectly on Linux with upstream drivers and on Windows with proprietary drivers from the vendor. In the long run I also need to add support for running the software on these platforms so I needed a good solution for passing a USB device through to a VM.
