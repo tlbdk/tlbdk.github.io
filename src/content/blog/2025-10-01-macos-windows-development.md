@@ -1,10 +1,10 @@
 ---
-title:  "VSCode remote for Windows Development on a MacMini M4"
-description: "How to use VSCode remote for Windows Development on a MacMini M4"
-pubDate:   2025-10-01 10:07:00 +0200
+title: 'VSCode remote for Windows Development on a MacMini M4'
+description: 'How to use VSCode remote for Windows Development on a MacMini M4'
+pubDate: 2025-10-01 10:07:00 +0200
 categories: MacOS VM, UVSCode Server, Remote SSH
 slug: astro/2025-06-27-vscode-remote-windows-macmini-m4.html
-heroImage: "/parallels-windows-vscode.svg"
+heroImage: '/parallels-windows-vscode.svg'
 ---
 
 I need to developer a small commandline tool that uses a Windows library but my main development machine is a MacMini M4, I already have a parallels license so I could just install VSCode and just run it in the Windows VM but in the past the development experience has not been great because of latency, keyboard shortcuts and other differences between MacOS and Windows plus the emulation layer. Some months back I developed the same command line tool on Linux by using VSCode remote and a Linux VM and it worked great. So why not try doing this on windows also.
@@ -17,7 +17,7 @@ Note: Windows OpenSSH server does not support agent forwarding so you need to ge
 
 1. Install OpenSSH server as Powershell admin:
 
-``` powershell
+```powershell
 Get-WindowsCapability -Online | Where-Object Name -like ‘OpenSSH.Server*’ | Add-WindowsCapability –Online
 Set-Service -Name sshd -StartupType 'Automatic'
 Start-Service sshd
@@ -27,13 +27,13 @@ Start-Service sshd
 
 3. Add rule to open port 22 for tcp in firewall.
 
-``` powershell
+```powershell
 New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
 4. Install needed tools:
 
-``` powershell
+```powershell
 winget install Microsoft.WindowsTerminal
 winget install --id Git.Git -e --source winget
 winget install -e --id zig.zig
@@ -41,7 +41,7 @@ winget install -e --id zig.zig
 
 5. Install Visual Studio for C++ builds tools:
 
-``` powershell
+```powershell
 winget install -e --id Microsoft.VisualStudio.2022.BuildTools
 winget install -e --id Microsoft.VisualStudio.2022.Community --override "--quiet --add Microsoft.VisualStudio.Workload.NativeDesktop"
 ```

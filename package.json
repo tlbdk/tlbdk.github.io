@@ -1,14 +1,16 @@
 {
 	"name": "popular-orbit",
-	"type": "module",
 	"version": "0.0.1",
+	"type": "module",
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"lint": "biome check",
-		"lint:fix": "biome check --fix"
+		"lint": "oxlint .",
+		"lint:fix": "oxlint --fix .",
+		"format": "oxfmt --check .",
+		"format:fix": "oxfmt ."
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.2.6",
@@ -17,6 +19,7 @@
 		"astro": "^5.7.10"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.4"
+		"oxfmt": "^0.52.0",
+		"oxlint": "^1.67.0"
 	}
 }

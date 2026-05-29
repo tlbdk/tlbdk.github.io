@@ -1,17 +1,17 @@
 ---
-title:  "Sync your outlook calender to a gmail og google apps account"
-description: ""
-pubDate:   2016-04-14 15:11:00 +0200
+title: 'Sync your outlook calender to a gmail og google apps account'
+description: ''
+pubDate: 2016-04-14 15:11:00 +0200
 categories: outlook sync gmail googleapps
 slug: outlook/sync/gmail/googleapps/2016/04/14/outlook-calendar-sync.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 Download and install [Outlook Google Calendar Sync](https://outlookgooglecalendarsync.codeplex.com)
 
 Disable warning of programmatic access in Outlook 2013:
 
-``` ini
+```ini
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\15.0\Outlook\Security]

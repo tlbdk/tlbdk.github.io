@@ -1,10 +1,10 @@
 ---
-title:  "Google Workspace API access"
-description: "What are the option for accessing Google Workspace API from GCP"
-pubDate:   2025-06-06 23:26:00 +0200
+title: 'Google Workspace API access'
+description: 'What are the option for accessing Google Workspace API from GCP'
+pubDate: 2025-06-06 23:26:00 +0200
 categories: Google Workspace
 slug: astro/2025/06/06/google-workspace-api-access.html
-heroImage: "/google-workspace-api.svg"
+heroImage: '/google-workspace-api.svg'
 ---
 
 When accessing the Google Workspace API from GCP there are two options: OAuth2 or Domain wide delegation.
@@ -16,7 +16,7 @@ https://workspaceupdates.googleblog.com/2020/08/use-service-accounts-google-grou
 
 ## OAuth2
 
-OAuth2 is the normal authentication method you use when accessing a services as a user, fx using the web interface or phone apps. 
+OAuth2 is the normal authentication method you use when accessing a services as a user, fx using the web interface or phone apps.
 
 When using this for server to server integration the flow is:
 
@@ -36,13 +36,13 @@ To setup up this authentication type:
 
 1. Create a new GCP project, setup OAuth Consent screen (you can only have one per project)
 2. Setup public endpoint for the redirect url to collect the OAuth tokens (access and refresh)
-3. Create OAuth Client Web Application using the public endpoint for redirect url, get the "Client Id" and "Client Secret". 
+3. Create OAuth Client Web Application using the public endpoint for redirect url, get the "Client Id" and "Client Secret".
 
 ## Domain wide delegation
 
 What is nice about services accounts is that if you combine it with workload identity you don't have to think about secrets rotation or how to securely store secrets as all this is managed by GCP.
 
-Domain wide delegation allows you to use GCP services accounts to access Google Workspace API but with the caveat that you get access to all users in the domain only limited by scopes. 
+Domain wide delegation allows you to use GCP services accounts to access Google Workspace API but with the caveat that you get access to all users in the domain only limited by scopes.
 
 The flow for this is the following:
 

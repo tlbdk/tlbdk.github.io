@@ -1,23 +1,23 @@
 ---
-title:  "Setting up a websocket SSH tunnel"
-description: ""
+title: 'Setting up a websocket SSH tunnel'
+description: ''
 pubDate: 2016-04-14 15:11:00 +0200
 categories: websocket ssh tunnel
 slug: websocket/ssh/tunnel/2016/04/14/setting-up-websocket-ssh-tunnel.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 # Setting up the server
 
 Install wstunnel:
 
-``` bash
+```bash
 sudo npm -g install wstunnel
 ```
 
 Create systemd unit file /etc/systemd/system/wstunnel.service:
 
-``` ini
+```ini
 [Service]
 ExecStart=/usr/bin/wstunnel -s 8080
 Restart=always
@@ -40,7 +40,7 @@ systemctl start wstunnel
 
 Setup nginx to forward traffic to wstunnel add file /etc/nginx/sites-available/ssh.example.com:
 
-``` nginx
+```nginx
 server {
   listen 80;
   server_name ssh.example.com;
@@ -103,20 +103,20 @@ server {
 
 Create user for basic authentication:
 
-``` bash
+```bash
 echo -n "user:"" > /opt/ssh.example.com.htpasswd
 mkpasswd -m sha-512 >> /opt/ssh.example.com.htpasswd
 ```
 
 Activate the site:
 
-``` bash
+```bash
 ln -s /etc/nginx/sites-available/ssh.example.com /etc/nginx/sites-enabled/ssh.example.com
 ```
 
 Restart nginx:
 
-``` bash
+```bash
 systemctl restart nginx
 ```
 
@@ -124,19 +124,19 @@ systemctl restart nginx
 
 Listen on local port 2222 and forward traffic to server side localhost port 22 connecting over http:
 
-``` bash
+```bash
 wstunnel -t 2222:localhost:22 ws://user:password@ssh.example.com/socket
 ```
 
 Listen on local port 2222 and forward traffic to server side localhost port 22 connecting over https:
 
-``` bash
+```bash
 wstunnel -t 2222:localhost:22 wss://user:password@ssh.example.com/socket
 ```
 
 Same as above, but with http proxy:
 
-``` bash
+```bash
 wstunnel -t 2222:localhost:22 -p http://user:password@proxy.example.com:8080 wss://user:password@ssh.example.com/socket
 ```
 

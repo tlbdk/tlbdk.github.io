@@ -2,20 +2,21 @@
 
 ## Install
 
-``` bash
+```bash
 npm install
 ```
 
 ## Run
 
-``` bash
+```bash
 npm run dev
 ```
 
 ## VS Code
 
 launch.json:
-``` json
+
+```json
 {
 	"version": "0.2.0",
 	"configurations": [

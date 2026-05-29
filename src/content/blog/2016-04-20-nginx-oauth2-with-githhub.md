@@ -1,10 +1,10 @@
 ---
-title:  "Nginx OAuth2 proxy with Github and auth_request"
-description: ""
-pubDate:   2016-04-14 15:11:00 +0200
+title: 'Nginx OAuth2 proxy with Github and auth_request'
+description: ''
+pubDate: 2016-04-14 15:11:00 +0200
 categories: nginx oauth2 auth_request
 slug: nginx/oauth2/auth_request/2016/04/14/nginx-oauth2-with-githhub.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 1. Create a new project: https://github.com/settings/developers
@@ -15,13 +15,13 @@ https://github.com/bitly/oauth2_proxy
 
 Testing:
 
-``` bash
+```bash
 oauth2_proxy -client-id="<Client id>" -client-secret="<Client Secret>" -provider="github" -cookie-secret="<random string>" -ail-domain="*" -upstream file:///dev/null
 ```
 
 Nginx config file:
 
-``` nginx
+```nginx
 location = /oauth2/auth {
     internal;
     proxy_pass http://127.0.0.1:4180;
@@ -55,7 +55,7 @@ location / {
 
 /etc/oauth2_proxy.cfg:
 
-``` ini
+```ini
 client_id = "<Client id>"
 client_secret = "<Client Secret>"
 provider = "github"
@@ -71,7 +71,7 @@ github_org = "nversion"
 
 /etc/systemd/system/oauth2_proxy.service:
 
-``` ini
+```ini
 # Systemd service file for oauth2_proxy daemon
 #
 

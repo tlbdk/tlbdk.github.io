@@ -1,10 +1,10 @@
 ---
-title:  "Nginx request routing with auth_request"
-description: ""
-pubDate:   2016-04-14 15:11:00 +0200
+title: 'Nginx request routing with auth_request'
+description: ''
+pubDate: 2016-04-14 15:11:00 +0200
 categories: nginx routing auth_request
 slug: nginx/routing/auth_request/2016/04/14/nginx-request-routing-with-auth_request.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 I have recently been thinking a bit about how to do pilot testing of new
@@ -18,42 +18,42 @@ round-robin, but the nodejs server could easily do the decision based on the
 content of a JWT token or looking up in an external database.
 
 ```javascript
-const http = require('http');
+const http = require('http')
 
-var count = 1;
+var count = 1
 
 const auth_server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('X-Pilot', (count++ % 2 > 0) ?  'A' : 'B'); // Do round-robin
-  res.end();
-});
+	res.statusCode = 200
+	res.setHeader('X-Pilot', count++ % 2 > 0 ? 'A' : 'B') // Do round-robin
+	res.end()
+})
 
-auth_server.listen(3000, "localhost", () => {
-  console.log("Server running at http://localhost:3000");
-});
+auth_server.listen(3000, 'localhost', () => {
+	console.log('Server running at http://localhost:3000')
+})
 
 const server1 = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World 1\n');
-});
+	res.statusCode = 200
+	res.setHeader('Content-Type', 'text/plain')
+	res.end('Hello World 1\n')
+})
 
-server1.listen(3001, "localhost", () => {
-  console.log("Server running at http://localhost:3001");
-});
+server1.listen(3001, 'localhost', () => {
+	console.log('Server running at http://localhost:3001')
+})
 
 const server2 = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World 2\n');
-});
+	res.statusCode = 200
+	res.setHeader('Content-Type', 'text/plain')
+	res.end('Hello World 2\n')
+})
 
-server2.listen(3002, "localhost", () => {
-  console.log("Server running at http://localhost:3002");
-});
+server2.listen(3002, 'localhost', () => {
+	console.log('Server running at http://localhost:3002')
+})
 ```
 
-``` nginx
+```nginx
 upstream auth_upstream {
   server 127.0.0.1:3000;
 }

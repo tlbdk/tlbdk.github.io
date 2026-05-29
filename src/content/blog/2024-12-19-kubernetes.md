@@ -1,10 +1,10 @@
 ---
-title:  "Quick Kubernetes intro"
-description: ""
-pubDate:   2024-12-19 10:11:00 +0100
+title: 'Quick Kubernetes intro'
+description: ''
+pubDate: 2024-12-19 10:11:00 +0100
 categories: Kubernetes
 slug: kubernetes/2024/12/19/into.html
-heroImage: "/kubernetes.svg"
+heroImage: '/kubernetes.svg'
 ---
 
 This gives a some quick examples of a service running in 3 copies exposed on http and https behind a load balancer, with a setup that allow zero downtime deployments and a multi environment deployments with environment specifics in separate files
@@ -13,21 +13,20 @@ Client (HTTP/HTTPS)-> Load balancer (HTTP)-> 3 x Service
 
 ## Overview of files
 
-* [my-api.deployment.yaml](#my-apideploymentyaml): Defines what pods(containers) to run, environments variables to set, liveliness, readiness, startup checks and   
-* [my-api.service.yaml](#my-apiserviceyaml): Creates a common reference for all pods that can be used by the ingress to create the load balancers
+- [my-api.deployment.yaml](#my-apideploymentyaml): Defines what pods(containers) to run, environments variables to set, liveliness, readiness, startup checks and
+- [my-api.service.yaml](#my-apiserviceyaml): Creates a common reference for all pods that can be used by the ingress to create the load balancers
 
-Environment specific files: 
+Environment specific files:
 
-* [my-api.ingress.yaml](#my-apiingressyaml): Creates a load balancer pointing to all the pods
-* [common.configmap.yaml](#commonconfigmapyaml): Common environment variables
-* [my-api.configmap.yaml](#my-apiconfigmapyaml): Deployment specific environment variables
-* [my-api.secretsmap.yaml](#my-apisecretsmapyaml): Deployment specific secrets environment variables such as passwords, should be committed in an encrypted repo
-* [my-api-files.secretsmap.yaml](#my-api-filessecretsmapyaml): Deployment specific secrets files such as private keys or other things too large to share as environment variables, should be committed in an encrypted repo
-
+- [my-api.ingress.yaml](#my-apiingressyaml): Creates a load balancer pointing to all the pods
+- [common.configmap.yaml](#commonconfigmapyaml): Common environment variables
+- [my-api.configmap.yaml](#my-apiconfigmapyaml): Deployment specific environment variables
+- [my-api.secretsmap.yaml](#my-apisecretsmapyaml): Deployment specific secrets environment variables such as passwords, should be committed in an encrypted repo
+- [my-api-files.secretsmap.yaml](#my-api-filessecretsmapyaml): Deployment specific secrets files such as private keys or other things too large to share as environment variables, should be committed in an encrypted repo
 
 ## my-api.deployment.yaml
 
-``` yaml
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -110,11 +109,11 @@ spec:
         - name: my-api
           secret:
             secretName: my-api-files
-
 ```
 
 ## my-api.service.yaml
-``` yaml
+
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -132,34 +131,33 @@ spec:
     app: my-api
 ```
 
-
 ## my-api.ingress.yaml
-``` yaml
+
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-api
 spec:
   tls:
-  - hosts:
-    - my-api.domain.tld
+    - hosts:
+        - my-api.domain.tld
   rules:
-  - host: my-api.domain.tld
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: my-api
-            port:
-              name: http
-
+    - host: my-api.domain.tld
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: my-api
+                port:
+                  name: http
 ```
 
-
 ## common.configmap.yaml
-``` yaml
+
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -171,7 +169,8 @@ data:
 ```
 
 ## my-api.configmap.yaml
-``` yaml
+
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -182,7 +181,7 @@ data:
 
 ## my-api.secretsmap.yaml
 
-``` yaml
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -193,7 +192,7 @@ data:
 
 # my-api-files.secretsmap.yaml
 
-``` yaml
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:

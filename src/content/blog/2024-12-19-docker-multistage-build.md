@@ -1,10 +1,10 @@
 ---
-title:  "Docker multistage build"
-description: ""
-pubDate:   2024-12-19 11:27:00 +0100
+title: 'Docker multistage build'
+description: ''
+pubDate: 2024-12-19 11:27:00 +0100
 categories: Docker
 slug: docker/2024/12/19/multistage-build.html
-heroImage: "/docker.svg"
+heroImage: '/docker.svg'
 ---
 
 This gives some examples on how to use docker multistage builds with a NodeJS bases image.
@@ -21,7 +21,7 @@ There is a good example here of how to do that also support multi arch builds: h
 
 ## Application docker file
 
-``` dockerfile
+```dockerfile
 ARG NODE_VERSION=20.x
 ARG COMMIT_SHA
 

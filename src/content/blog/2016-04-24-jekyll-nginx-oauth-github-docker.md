@@ -1,10 +1,10 @@
 ---
-title:  "Private github pages hosted in Docker"
-description: ""
-pubDate:   2016-04-14 15:11:00 +0200
+title: 'Private github pages hosted in Docker'
+description: ''
+pubDate: 2016-04-14 15:11:00 +0200
 categories: nginx oauth2 auth_request jekyll
 slug: nginx/oauth2/auth_request/jekyll/2016/04/14/jekyll-nginx-oauth-github-docker.html
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: '/blog-placeholder-2.jpg'
 ---
 
 A couple of days ago I [posted]({% post_url 2016-04-20-nginx-oauth2-with-githhub %})
@@ -18,28 +18,28 @@ Just to understand the process:
 
 1. Startup image and do initial clone of documentation site with deploy key
 2. Startup jekyll build -watch on checked out git repo
-2. Do git pull every 10 seconds
+3. Do git pull every 10 seconds
 
 # How to use the docker build file
 
 To do you own setup you need to generate a ssh-key pair and put it in the
 root/.ssh folder.
 
-``` bash
+```bash
 cd root/.ssh
 ssh-keygen # pick location ./id_rsa
 ```
 
 This key public part needs to be registered in repo Setting -> Deploy keys. I
 picked a very long random string for the ssh password, fx. min 40 chars to make
-brute-forcing close to impossible.  
+brute-forcing close to impossible.
 
 Next create a file to hold the enviroment variables, this file should NOT go in
 the repo and should be kept private on the hosting server.
 
 Dockerfile.config:
 
-``` ini
+```ini
 GITHUB_CLIENT_ID=<Client id>
 GITHUB_CLIENT_SECRET=<Client secret>
 GITHUB_COOKIE_SECRET=<Random string>
@@ -48,7 +48,7 @@ SSH_PASSWORD=<Password for ssh key>
 
 Sample command to build and run the site:
 
-``` bash
+```bash
 cd docker/
 docker build -t tlb:tlb.nversion.dk . && docker run --env-file=Dockerfile.config -t -i -p 4280:80 tlb:tlb.nversion.dk
 ```
@@ -56,7 +56,7 @@ docker build -t tlb:tlb.nversion.dk . && docker run --env-file=Dockerfile.config
 Im using Nginx to do the SSL termination, but if you are hosting on AWS then
 using Elastic Load Balancer would be the best choice for this:
 
-``` nginx
+```nginx
 location / {
   proxy_pass http://127.0.0.1:4280;
   proxy_set_header Host $host;

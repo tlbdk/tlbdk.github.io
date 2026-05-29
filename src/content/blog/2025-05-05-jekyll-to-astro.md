@@ -1,10 +1,10 @@
 ---
-title:  "Migrate from Jekyll to Astro on Github Pages"
-description: ""
-pubDate:   2025-05-05 22:00:00 +0200
+title: 'Migrate from Jekyll to Astro on Github Pages'
+description: ''
+pubDate: 2025-05-05 22:00:00 +0200
 categories: Astro
 slug: astro/2025/05/05/jekyll-migrate.html
-heroImage: "/astro-migration.svg"
+heroImage: '/astro-migration.svg'
 ---
 
 The main reason to use Jekyll is the free and easy hosting you get from GitHub, but Jekyll has not aged well and you have to deal with old, slow and weird Ruby tooling. As I have a bit more free time at the moment I decided to explore what other options that have popped up in the last 10 years and there is a lot, a quick search led me to Astro that seems to check most boxes and is based on modern technology and offers a lot of choice in framework
@@ -15,32 +15,33 @@ This is not a full guide on how to port your old Jekyll website to as there is a
 
 Remove Jekyll stuff:
 
-``` bash
+```bash
 rm -rf _config.yml index.html 404.html feed.xml Gemfile Gemfile.lock .gitignore _includes _layouts _sass css
 ```
 
 Create new astro blog and copy all files into the root of the repo:
-``` bash
+
+```bash
 npm create astro@latest -- --template blog
 mv folder/.* folder/* ./
 ```
 
 Start blog path from / not /blog to keep only urls works and remember to fix imports in .astro files:
 
-``` bash
+```bash
 mv src/pages/blog/* src/pages/
 ```
 
 Copy the blog posts to new location in Astro:
 
-``` bash
+```bash
 mv _posts/* src/content/blog/
 rm -rf posts/
 ```
 
 Update all posts to new format that Astro uses.
 
-``` diff
+```diff
 -layout: post
  title:  "First post on github pages"
 +description: "Docuwiki to Jekyll"
@@ -65,7 +66,7 @@ Disable "Classic Github pages" deployment:
 
 For building the static website files I'm using docker to as it's simple, self contained and I can test it locally:
 
-``` dockerfile
+```dockerfile
 # Using node 22.x on alpine Linux because it smaller images
 FROM node:22-alpine AS builder
 
@@ -79,7 +80,7 @@ RUN npm install
 # Build the site and save the static website files to /app/dist
 RUN npm run build
 
-# Start from an empty image and copy in the static website files 
+# Start from an empty image and copy in the static website files
 FROM scratch
 COPY --from=builder /app/dist /
 ```
@@ -92,19 +93,20 @@ docker build --progress=plain --no-cache --output type=tar,dest=/artifact.tar .
 
 You can find all the docker files here:
 
-* [Dockerfile](https://github.com/tlbdk/tlbdk.github.io/tree/master/Dockerfile).
-* [.dockerignore](https://github.com/tlbdk/tlbdk.github.io/tree/master/.dockerignore).
+- [Dockerfile](https://github.com/tlbdk/tlbdk.github.io/tree/master/Dockerfile).
+- [.dockerignore](https://github.com/tlbdk/tlbdk.github.io/tree/master/.dockerignore).
 
-For deploying I'm using the action "actions/deploy-pages@v4": 
+For deploying I'm using the action "actions/deploy-pages@v4":
 
 [deploy.yaml](https://github.com/tlbdk/tlbdk.github.io/tree/master/.github/workflows/deploy.yaml):
-``` yaml
+
+```yaml
 name: Deploy to GitHub Pages
 
 on:
   # Trigger the workflow every time you push to the `master` branch
   push:
-    branches: [ master ]
+    branches: [master]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -141,6 +143,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
-
-
-
